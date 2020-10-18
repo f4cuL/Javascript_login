@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        #inputClave
+        {
+            margin-left:14px;
+        }
+        #ingreso
+        {
+            margin-left: 40px;
+        }
+        #btn
+        {
+            margin-left: 55px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <form action="">
+            <p id="ingreso">
+                Ingreso al sistema
+            </p>
+
+            <div>
+            <label for="inputUsuario">usuario:</label>
+            <input type="text" id="inputUsuario" onchange="change()" placeholder="Ingrese mail">
+            </div>
+
+            <div>
+            <label for="inputClave">clave:</label>
+            <input type="password" id="inputClave" onchange="change()" placeholder="Ingrese password">
+            </div>
+
+            <input type="button" value="Ingresar" id="btn">
+
+        </form>
+
+    </div>
+
+    <script>
+
+const user = document.querySelector("#inputUsuario");
+const password = document.querySelector("#inputClave");
+const submit = document.querySelector("#btn");
+submit.disabled=true;
+
+function change ()
+{
+    submit.disabled = !(user.value.includes("@") && password.value.length > 0);   
+}
+
+
+
+</script>
+</body>
+
+</html>
